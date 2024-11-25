@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .card { padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 10px 0; }
+    h1, h2 { color: #2c7a7b; }
+    button { background: #38a169; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>EcoTrack</h1>
+  <div class="card">
+    <h2>Track Your Carbon Footprint</h2>
+    <label for="activity">Activity:</label>
+    <select id="activity">
+      <option value="0.5">Walk/Bike</option>
+      <option value="1.2">Public Transport</option>
+      <option value="2.5">Drive (Car)</option>
+    </select>
+    <button onclick="trackActivity()">Add Activity</button>
+    <p>Total Carbon Footprint: <span id="carbon">0</span> kg CO2</p>
+  </div>
+  <div class="card">
+    <h2>Weekly Challenge</h2>
+    <p id="challenge">Click below to get your challenge!</p>
+    <button onclick="getChallenge()">New Challenge</button>
+  </div>
+  <div class="card">
+    <h2>Did You Know?</h2>
+    <p id="tip">Sustainability tips will appear here.</p>
+    <button onclick="getTip()">Get a Tip</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
