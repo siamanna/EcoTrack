@@ -1,11 +1,11 @@
 /**
 Student name (author):     Sia Manna
-            Hackathon:     EcoTrack
+            Hackathon:     
             File name:     style.css
      File discription:     This document serves as the external stylesheet that
                            contains all css code that controls the layout/style
-                           of the "Ancient Analog Computers" webpage.
-         Last Updated:     4/28/22
+                           of the "EcoTracker" webpage.
+         Last Updated:     6/15/24
 */
 
 
@@ -30,7 +30,7 @@ body.reg {
     padding: 0;
     /*fixed background image (won't scroll)*/
     background-color: #ddfaf7; /* backup to background image */
-    background: url("../images/background.jpg") no-repeat center fixed;
+    background: url("../css/background.jpg") no-repeat center fixed;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -39,7 +39,7 @@ body.quiz {
     margin: 0;
     padding: 0;
     /*fixed background image (won't scroll)*/
-    background: url("../images/background2.jpg") fixed;
+    /*background: url("../images/background2.jpg") fixed;*/
     background-repeat: repeat-x;
 
 }
@@ -80,7 +80,7 @@ table#top > tbody > tr#navbar > td a {
     width: 100%;
     height: 100%;
     display: block;
-    color: black;
+    color: #588157;
     text-align: center;
     text-decoration: none;
     height: 100%;
@@ -97,10 +97,10 @@ table#top > tbody > tr#navbar > td a {
 }
 
 table#top > tbody > tr#navbar > td:not(#active) a:hover {
-    background-color: #00A36C; /*translucent white*/
+    background-color: #588157; /*translucent white*/
 }
 table#top > tbody > tr#navbar > td#active a {
-    background-color: #2AAA8A; /*translucent white*/
+    background-color: #85a889; /*translucent white*/
 }
 
 
@@ -128,6 +128,7 @@ table#top > tbody > tr#quizme > td > a {
     text-decoration: none;
     padding: 0.5vw;
 }
+
 
 table.head5 {
     margin: /*top*/     4vw
@@ -217,8 +218,8 @@ text-align: left;
 
 
 
-.daily {
-    box-shadow: 6px 6px 5px rgb(68, 170, 75);
+.antikythera {
+    box-shadow: 6px 6px 5px rgb(107, 102, 102);
     width: 30vw;
     float: right;
     padding: 0;
@@ -341,7 +342,7 @@ PARAGRAPHS
 
 .paragraph a {
     text-decoration: none;
-    color:#00ff1e;
+    color:#6830da;
 }
 .paragraph a:hover {
     text-decoration: underline;
@@ -382,11 +383,11 @@ resources, bottom of page
 #workscited a {
     font-size: 1.1vw;
     text-decoration: none;
-    color:#6830da;
+    color:#04ff00;
 }
 #workscited a:hover {
     text-decoration: underline;
-    color:#b595ff;
+    color:#083602;
 }
 
 /*
@@ -532,11 +533,11 @@ resources, bottom of page
 #source-content a {
     font-size: 1.1vw;
     text-decoration: none;
-    color:#6830da;
+    color:#04ff00;
 }
 #source-content a:hover {
     text-decoration: underline;
-    color:#b595ff;
+    color:#083602;
 }
 
 caption {
@@ -625,49 +626,4 @@ input.submit1 {
 input.submit1:hover {
     background-color: #82cbba81;
     box-shadow: 4px 4px 7px #00000093;
-}
-
-.custom-btn {
-    background-color: #2AAA8A;
-    color: white;
-    border: none;
-    padding: 0.7vw 2vw;
-    font-size: 1vw;
-    font-family: libreBaskerville;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    text-align: center;
-}
-
-.custom-btn:hover {
-    background-color: #00A36C;
-}
-
-.post-header {
-    font-family: libreBaskerville;
-    text-align: center;
-    color: #2AAA8A;
-    margin-bottom: 1.5vw;
-}
-
-.post-text {
-    font-family: amiri;
-    font-size: 1.1vw;
-    color: #333;
-}
-
-.reply-btn {
-    background-color: #00A36C;
-    color: white;
-    border: none;
-    padding: 0.5vw 1.5vw;
-    font-size: 0.9vw;
-    font-family: libreBaskerville;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    text-align: center;
-}
-
-.reply-btn:hover {
-    background-color: #008858;
 }

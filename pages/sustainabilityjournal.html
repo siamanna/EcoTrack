@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!--
+Student name (author):     Sia Manna
+            Hackathon:     EcoTrack
+            File name:     sustainabilityjournal.html
+     File description:     Page for users to record daily sustainable actions.
+         Last Updated:     12/15/24
+-->
+
+<html lang="en">
+
+<head>
+    <title>Sustainability Journal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <!-- <script>
+        // Dynamic display of sustainable actions
+        function addAction(event) {
+            event.preventDefault();
+            const actionInput = document.getElementById("sustainable-action").value.trim();
+            const actionList = document.getElementById("journal-entries");
+
+            if (actionInput) {
+                const listItem = document.createElement("li");
+                listItem.textContent = actionInput;
+                actionList.appendChild(listItem);
+
+                document.getElementById("sustainable-action").value = ""; // Clear input
+            }
+        }
+    </script> -->
+    <script src="../js/script.js"></script>
+</head>
+
+<body class="reg">
+
+<!-- Table: Header -->
+<table class="head5">
+    <tr>
+        <td>SIA MANNA</td>        
+        <td>Hackathon Project</td>    
+        <td>12/15/24</td>        
+    </tr>
+</table>
+
+<!-- Navigation Bar -->
+<table id="top">
+    <tbody>
+        <tr id="navbar">
+            <td><a href="../index.html">Home</a></td>
+            <td><a href="dailychallenges.html">Daily Challenges</a></td>
+            <td><a href="weeklychallenges.html">Weekly Challenges</a></td>
+            <td><a href="monthlychallenges.html">Monthly Challenges</a></td>
+            <td><a href="yearlychallenges.html">Yearly Challenges</a></td>
+            <td id="active"><a href="sustainabilityjournal.html">Sustainability Journal</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Title -->
+<header id="title">
+    <h1>Your Sustainability Journal</h1>
+    <h2>— Track your daily eco-friendly actions —</h2>
+</header>
+
+<!-- Journal Content -->
+<main>
+    <div class="paragraph1">
+        <p style="text-align: center; font-size: 1.1vw;">
+            Use this space to record your sustainable actions each day. Whether you saved water, recycled, planted trees, or used reusable bags, 
+            every small step counts towards a greener future. Let’s celebrate your progress!
+        </p>
+    </div>
+
+    <!-- Input Form -->
+    <div class="paragraph" style="text-align: center;">
+        <form onsubmit="addAction(event)">
+            <label for="sustainable-action" style="font-family: libreBaskerville; font-size: 1.2vw; color: #2AAA8A;">
+                What sustainable action did you take today?
+            </label>
+            <br>
+            <input type="text" id="sustainable-action" placeholder="e.g., 'Recycled plastic bottles'" 
+                   style="margin-top: 1vw; width: 60%; padding: 0.7vw; font-size: 1vw; border: 1px solid #00A36C; border-radius: 0.5vw;">
+            <br><br>
+            <button type="submit" style="background-color: #2AAA8A; color: white; border: none; padding: 0.7vw 2vw; font-size: 1vw; 
+                                        border-radius: 0.5vw; cursor: pointer;">
+                Add Action
+            </button>
+        </form>
+    </div>
+
+    <!-- Display Journal Entries -->
+    <div class="paragraph1" style="margin-top: 2vw;">
+        <h3 style="text-align: center; font-family: libreBaskerville; color: #2AAA8A;">My Sustainable Actions</h3>
+        <ul id="journal-entries" style="list-style-type: none; padding-left: 0; font-family: amiri; font-size: 1.1vw; color: #333;">
+            <!-- Actions will be displayed here dynamically -->
+        </ul>
+    </div>
+</main>
+
+<!-- Footer -->
+<div id="workscited">
+    <p> 
+        Author: Sia Manna<br>
+        Contact: <a href="mailto:sbm1034@usnh.edu" target="_blank">sbm1034@usnh.edu</a><br>
+        Background Image: 
+        <a href="https://www.wallpaperbetter.com/en/hd-wallpaper-grzyl" target="_blank">Sustainability Wallpaper</a>
+    </p>
+</div>
+
+</body>
+</html>

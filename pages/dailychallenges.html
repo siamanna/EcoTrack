@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<!--
+                Author:    Sia Manna
+            File name:     dailychallenges.html
+     File description:     This document contains HTML that formats the
+                           interactive daily challenge thread.
+         Last Updated:     12/15/2024
+-->
+
+<html lang="en">
+
+<head>
+    <title>Daily Challenges</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <script src="../js/script.js"></script>
+</head>
+
+<body class="reg">
+
+<!-- Table: Header -->
+<table class="head5">
+    <tr>
+        <td>SIA MANNA</td>        
+        <td>HACKATHON PROJECT</td>    
+        <td>12/15/24</td>        
+    </tr>
+</table> 
+
+<!-- Navigation Bar -->
+<table id="top">
+    <tbody>
+        <tr id="navbar">
+            <td><a href="../index.html">Home</a></td>
+            <td id="active"><a href="dailychallenges.html">Daily Challenges</a></td>
+            <td><a href="weeklychallenges.html">Weekly Challenges</a></td>
+            <td><a href="monthlychallenges.html">Monthly Challenges</a></td>
+            <td><a href="yearlychallenges.html">Yearly Challenges</a></td>
+            <td><a href="sustainabilityjournal.html">Sustainability Journal</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Title -->
+<header id="title">
+    <h1>Daily Challenges</h1>
+    <h2>— Small Steps, Big Impact &minus; Share Your Daily Wins —</h2>
+</header>
+
+<!-- Daily Challenge -->
+<div class="paragraph">
+    <h3 class="post-header">Today's Challenge: Use a reusable water bottle all day.</h3>
+    <p class="post-text" style="text-align: center;">
+        Post your response below! Did you participate? Share your experiences, encourage others, and respond to posts.
+    </p>
+</div>
+
+<!-- Post Submission Form -->
+<div class="paragraph1">
+    <form method="POST" action="{{ url_for('thread', thread_type='daily') }}" style="text-align: center;">
+        <textarea name="caption" placeholder="Share your response to today's challenge..." 
+                  style="width: 80%; height: 8vw; padding: 1vw; font-size: 1vw; font-family: amiri; border-radius: 0.5vw; border: 1px solid #2AAA8A;"></textarea>
+        <br><br>
+        <button type="submit" class="custom-btn">POST RESPONSE</button>
+    </form>
+</div>
+
+<!-- Thread Display -->
+<div class="paragraph1" style="margin-top: 2vw;">
+    <h3 class="post-header">Community Responses</h3>
+
+    {% for post in posts %}
+    <div style="background-color: #ffffff77; border-radius: 0.7vw; padding: 1.5vw; margin: 1vw auto; width: 80%; 
+                box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);">
+        <p class="post-text" style="margin: 0;">
+            <strong style="font-family: libreBaskerville;">{{ post.username }}</strong> | <em>{{ post.date }}</em>
+        </p>
+        <p class="post-text" style="margin: 1vw 0;">
+            {{ post.caption }}
+        </p>
+        <!-- Like/Reply Buttons -->
+        <div style="text-align: right;">
+            <form method="POST" action="{{ url_for('thread', thread_type='daily') }}">
+                <input type="hidden" name="reply_to" value="{{ post.id }}">
+                <button type="submit" class="reply-btn">REPLY</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>

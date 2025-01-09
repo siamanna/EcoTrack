@@ -1,39 +1,134 @@
 <!DOCTYPE html>
+
+<!--
+Student name (author):     Sia Manna
+            Hackathon:     Hackathon Name
+            File name:     index.html
+     File description:     Homepage for EcoTracker - A sustainability goal tracking app.
+         Last Updated:     6/15/24
+-->
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EcoTrack</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .card { padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin: 10px 0; }
-    h1, h2 { color: #2c7a7b; }
-    button { background: #38a169; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; }
-  </style>
+    <title>EcoTracker - Track Your Sustainability Goals</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
-<body>
-  <h1>EcoTrack</h1>
-  <div class="card">
-    <h2>Track Your Carbon Footprint</h2>
-    <label for="activity">Activity:</label>
-    <select id="activity">
-      <option value="0.5">Walk/Bike</option>
-      <option value="1.2">Public Transport</option>
-      <option value="2.5">Drive (Car)</option>
-    </select>
-    <button onclick="trackActivity()">Add Activity</button>
-    <p>Total Carbon Footprint: <span id="carbon">0</span> kg CO2</p>
-  </div>
-  <div class="card">
-    <h2>Weekly Challenge</h2>
-    <p id="challenge">Click below to get your challenge!</p>
-    <button onclick="getChallenge()">New Challenge</button>
-  </div>
-  <div class="card">
-    <h2>Did You Know?</h2>
-    <p id="tip">Sustainability tips will appear here.</p>
-    <button onclick="getTip()">Get a Tip</button>
-  </div>
-  <script src="script.js"></script>
+
+<body class="reg">
+
+<!-- Author, Project, and Date Table -->
+<table class="head5">
+    <tr>
+        <td>SIA MANNA</td>        
+        <td>HACKATHON</td>    
+        <td>6/15/24</td>        
+    </tr>
+</table> 
+
+<!-- Navigation Bar -->
+<table id="top">
+    <tbody>
+        <tr id="navbar">
+            <td id="active">
+                <a href="index.html">Home</a>
+            </td>
+            <td><a href="pages/dailychallenges.html">Daily Challenges</a></td>
+            <td><a href="pages/weeklychallenges.html">Weekly Challenges</a></td>
+            <td><a href="pages/monthlychallenges.html">Monthly Challenges</a></td>
+            <td><a href="pages/yearlychallenges.html">Yearly Challenges</a></td>
+            <td><a href="pages/sustainabilityjournal.html">Sustainability Journal</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Title and Subtitle -->
+<header id="title">
+    <h1>EcoTracker</h1>
+    <h2>— Empowering you to take small steps toward a greener planet —</h2>
+</header> 
+
+<!-- Main Content -->
+<main>
+    <div class="paragraph1">
+        <p>
+            Welcome to <b>EcoTracker</b>, your personal guide to adopting a sustainable lifestyle! Sustainability is achieved through consistent 
+            actions, big or small, that collectively make a significant impact. Whether it's reducing waste, saving energy, or promoting eco-friendly habits, 
+            every step you take counts towards protecting our planet.
+            <br><br>
+            EcoTracker offers curated <em>Daily, Weekly, Monthly, and Yearly Challenges</em> designed to help you incorporate green practices into your routine. 
+            From simple tips like reusing water bottles to impactful projects like planting trees, you can track your progress and celebrate your achievements.
+            <br><br>
+            Choose your path to sustainability:
+        </p>
+    </div>
+
+    <!-- Daily Challenges Section -->
+    <a href="pages/dailychallenges.html" class="hea" title="Take on daily sustainability tasks">
+        <b>DAILY CHALLENGES</b>
+    </a> 
+    <details>
+        <summary></summary>
+        <div class="paragraph">
+            <p>
+                Embrace daily eco-friendly habits like reducing plastic use, turning off unused lights, and conserving water. Each challenge helps you build 
+                consistent, sustainable routines that make a positive impact over time.
+            </p>
+        </div>
+    </details>
+
+    <!-- Weekly Challenges Section -->
+    <a href="pages/weeklychallenges.html" class="hea" title="Take on weekly sustainability tasks">
+        <b>WEEKLY CHALLENGES</b>
+    </a> 
+    <details>
+        <summary></summary>
+        <div class="paragraph">
+            <p>
+                Plan meaningful actions for the week: switch to reusable grocery bags, carpool to reduce emissions, or organize a local clean-up drive. 
+                Small weekly goals contribute to a healthier planet.
+            </p>
+        </div>
+    </details>
+
+    <!-- Monthly Challenges Section -->
+    <a href="pages/monthlychallenges.html" class="hea" title="Take on monthly sustainability tasks">
+        <b>MONTHLY CHALLENGES</b>
+    </a> 
+    <details>
+        <summary></summary>
+        <div class="paragraph">
+            <p>
+                Set monthly goals like starting a compost bin, eliminating single-use plastics, or implementing energy-efficient appliances. Commit to 
+                projects that promote significant eco-friendly change in your lifestyle.
+            </p>
+        </div>
+    </details>
+
+    <!-- Yearly Challenges Section -->
+    <a href="pages/yearlychallenges.html" class="hea" title="Take on yearly sustainability tasks">
+        <b>YEARLY CHALLENGES</b>
+    </a> 
+    <details>
+        <summary></summary>
+        <div class="paragraph">
+            <p>
+                Undertake ambitious goals for the year: plant a small garden, reduce your carbon footprint, or advocate for sustainability in your community. 
+                Long-term actions ensure your contribution to a greener future.
+            </p>
+        </div>
+    </details>
+</main>
+
+<div id="workscited">
+    <p> 
+        &nbsp;&nbsp;&nbsp;&nbsp;Author: Sia Manna
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Contact: <a href="mailto:sbm1034@usnh.edu" target="_blank">sbm1034@usnh.edu</a>
+        <br><br>
+    </p>
+</div>
+
 </body>
 </html>
