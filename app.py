@@ -3,11 +3,12 @@ import sqlite3
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# Flask app configuration
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # Replace this in production
 DATABASE = 'data.db'
 
-# Database connection
+# Database connection setup
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -21,7 +22,7 @@ def close_connection(exception):
     if db is not None:
         db.close()
 
-# Initialize database
+# Initialize the database
 def init_db():
     with app.app_context():
         db = get_db()
@@ -33,7 +34,6 @@ def init_db():
                         password TEXT NOT NULL,
                         name TEXT,
                         preferences TEXT)''')
-        
         # Create posts table
         db.execute('''CREATE TABLE IF NOT EXISTS posts (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,6 +46,7 @@ def init_db():
                         FOREIGN KEY (reply_to) REFERENCES posts(id))''')
         db.commit()
 
+# Home route
 @app.route('/')
 def index():
     if 'user_id' not in session:
@@ -54,6 +55,7 @@ def index():
     threads = db.execute("SELECT DISTINCT thread_type FROM posts").fetchall()
     return render_template('index.html', threads=threads, username=session['username'])
 
+# Register route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -72,6 +74,7 @@ def register():
             return "Username already exists. Try another one."
     return render_template('register.html')
 
+# Login route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -87,12 +90,14 @@ def login():
             return "Invalid credentials. Try again."
     return render_template('login.html')
 
+# Logout route
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
     session.pop('username', None)
     return redirect(url_for('login'))
 
+# Thread route
 @app.route('/thread/<thread_type>', methods=['GET', 'POST'])
 def thread(thread_type):
     if 'user_id' not in session:
@@ -111,6 +116,32 @@ def thread(thread_type):
                           ORDER BY posts.date DESC''', (thread_type,)).fetchall()
     return render_template('thread.html', posts=posts, thread_type=thread_type)
 
+# Daily challenges page
+@app.route('/dailychallenges')
+def daily_challenges():
+    return render_template('dailychallenges.html')
+
+# Weekly challenges page
+@app.route('/weeklychallenges')
+def weekly_challenges():
+    return render_template('weeklychallenges.html')
+
+# Monthly challenges page
+@app.route('/monthlychallenges')
+def monthly_challenges():
+    return render_template('monthlychallenges.html')
+
+# Yearly challenges page
+@app.route('/yearlychallenges')
+def yearly_challenges():
+    return render_template('yearlychallenges.html')
+
+# Sustainability journal page
+@app.route('/sustainabilityjournal')
+def sustainability_journal():
+    return render_template('sustainabilityjournal.html')
+
+# Initialize the app
 if __name__ == "__main__":
     init_db()
     app.run(debug=True)

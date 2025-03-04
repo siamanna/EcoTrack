@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+<body class="reg">
+
+    <div id="title">
+        <h1>Join EcoTrack</h1>
+        <h2>Create an account to track your sustainability goals!</h2>
+    </div>
+
+    <form action="{{ url_for('register') }}" method="POST" class="form-container">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="preferences">Sustainability Preferences:</label>
+        <input type="text" id="preferences" name="preferences" placeholder="e.g., Recycling, Water Conservation">
+
+        <input type="submit" value="Register" class="custom-btn">
+    </form>
+
+    <p class="paragraph">
+        Already have an account? <a href="{{ url_for('login') }}" class="expand">Login here!</a>
+    </p>
+
+</body>
+</html>
